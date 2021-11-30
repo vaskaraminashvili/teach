@@ -3,7 +3,6 @@ require_once 'test.php';
 $sql = "SELECT * FROM products";
 $result = mysqli_query($con, $sql);
 
-
     function pd($obj)
     {
 
@@ -63,61 +62,45 @@ $result = mysqli_query($con, $sql);
     <div class="container">
         <div class="row">
             <?php
-                if (mysqli_num_rows($result) > 0) {
-                  // output data of each row
-                    while($row = mysqli_fetch_assoc($result)) {
-            ?>
+                while($row = mysqli_fetch_assoc($result)) {
 
-
-            <?php
-                    }
-                } else {
-                  echo "0 results";
-                }
+                    // var_dump($row);
+                    // die;
             ?>
-            <div class="col-xs-12 col-md-6 col-xl-4 mb-5">
-                <div class="card">
-                  <img src="https://www.apple.com/v/product-red/r/images/meta/og__dbjwy50zuc02.png?202106010703" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-6 col-xl-4 mb-5">
-                <div class="card">
-                  <img src="https://www.apple.com/v/product-red/r/images/meta/og__dbjwy50zuc02.png?202106010703" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-6 col-xl-4 mb-5">
-                <div class="card">
-                  <img src="https://www.apple.com/v/product-red/r/images/meta/og__dbjwy50zuc02.png?202106010703" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-6 col-xl-4 mb-5">
-                <div class="card">
-                  <img src="https://www.apple.com/v/product-red/r/images/meta/og__dbjwy50zuc02.png?202106010703" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-            </div>
+                <?php if ($row['title'] && $row['description']) { ?>
+                    <div class="col-xs-12 col-md-6 col-xl-4 mb-5">
+                        <div class="card">
+                          <img src="<?php echo $row['image'] ?>" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title"><?php echo $row['title'] ?></h5>
+                            <p class="card-text"><?php echo $row['description']?></p>
+                            <a href="welcome.php?id=<?php echo $row['id'] ?>" class="btn btn-primary">Go somewhere</a>
+                          </div>
+                        </div>
+                    </div>
+                <?php } ?>
+            <?php } ?>
 
         </div>
     </div>
 
 </body>
 </html>
+
+
+<?php /*
+                <?php if ($row['title'] && $row['description']) { ?>
+                    <div class="col-xs-12 col-md-6 col-xl-4 mb-5">
+                        <div class="card">
+                          <img src="<?php echo $row['image']?>" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title"><?php echo $row['title']?></h5>
+                            <p class="card-text"><?php echo $row['description']?></p>
+                            <a href="welcome.php" class="btn btn-primary">Go somewhere</a>
+                          </div>
+                        </div>
+                    </div>
+                <?php } ?>
+
+
+*/ ?>

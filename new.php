@@ -1,5 +1,8 @@
 <?php
-
+$filedata = file_get_contents('tt.json');
+$details = json_decode($filedata);
+print_r($details->errcode);
+die( __LINE__ . ' died' );
 // esenio shecvale shen bazas ro moergos !!!!!!!!
 $servername = "localhost";
 $username = "root";
