@@ -117,25 +117,6 @@
 //         echo "<br>";
 // }
 
-$arr = [
-'Asia' => [
-    'China',
-    'India',
-    'Indonesia',
-    'Pakistan',
-],
-'Africa' => [
-    'China 1',
-    'India 2',
-    'Indonesia 3',
-    'Pakistan4',
-]
-// 'Europe' =>
-// 'North America' =>
-// 'South America' =>
-// 'Australia' =>
-// 'Antarctica' =>
-];
 // var_dump($arr);
 
 // foreach ($arr as $continet => $value) {
@@ -204,3 +185,40 @@ $arr = [
 // merc
 // bmw-
 // fiat
+
+// echo "string";
+
+
+// var_dump($array);
+// foreach ($array['cars']['bmw'] as $value) {
+//     echo $value;
+// }
+
+$news = [
+    [
+        'title' => 'titasd asdle',
+        'descrt' => 'asd asd asd ',
+        'date' => 'tarigi',
+    ],
+    [
+        'title' => 'titasd asdle',
+        'descrt' => 'asd asd asd ',
+        'date' => 'tarigi',
+    ],
+    [
+        'title' => 'titasd asdle',
+        'descrt' => 'asd asd asd ',
+        'date' => 'tarigi',
+    ],
+    [
+        'title' => 'titasd asdle',
+        'descrt' => 'asd asd asd ',
+        'date' => 'tarigi',
+    ],
+
+];
+var_dump($news);
+die( __LINE__ . ' died' );
+foreach ($news as $item) {
+    $item['title'];
+}
